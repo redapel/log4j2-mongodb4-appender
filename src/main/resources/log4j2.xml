@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+  <Appenders>
+    <NoSql name="MongoDbAppender">
+      <MongoDb4 connection="mongodb://localhost:${sys:MongoDBTestPort:-27017}/testDb.testCollection" />
+    </NoSql>
+  </Appenders>
+  <Loggers>
+    	<!-- Root level="trace"> 			<ERROR Recursive call to appender>
+		<Root level="debug"> 				<ERROR Recursive call to appender-->
+		<Root level="info"> 				<!-- ERROR Recursive call to appender-->
+		<!-- Root level="warn"> 			<SUCCESS>
+		<Root level="error"> 				<SUCCESS -->
+			<AppenderRef ref="MongoDbAppender" />
+		</Root>
+  </Loggers>
+</Configuration>
